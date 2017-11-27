@@ -1,0 +1,1 @@
+SELECT p.NAZWISKO, p.PLACA_POD, p.etat, z.NAZWA FROM pracownicy p LEFT JOIN zespoly z ON z.ID_ZESP = p.ID_ZESP

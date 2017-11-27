@@ -1,0 +1,1 @@
+SELECT * FROM pracownicy WHERE TO_CHAR(ZATRUDNIONY,'DY') = 'PN';
