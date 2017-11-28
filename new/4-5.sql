@@ -1,0 +1,6 @@
+CREATE OR REPLACE FUNCTION PLACA_NETTO (p_brutto IN NUMBER, p_podatek IN NUMBER
+) RETURN NUMBER IS
+
+BEGIN
+RETURN p_brutto * ((100-p_podatek)/100);
+END;
