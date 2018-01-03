@@ -1,0 +1,11 @@
+ALTER TABLE ZESPOLY ADD (LICZBA_PRACOWNIKOW NUMBER);
+UPDATE ZESPOLY Z
+SET LICZBA_PRACOWNIKOW =
+( SELECT COUNT(*) FROM PRACOWNICY WHERE ID_ZESP = Z.ID_ZESP );
+CREATE OR REPLACE TRIGGER trig_liczba_prac
+BEFORE INSERT ON pracownicy
+FOR EACH ROW
+BEGIN
+    UPDATE zespoly set liczba_pracownikow=liczba_pracownikow+1 where
+    id_zesp = :NEW.id.zesp;
+END; 
